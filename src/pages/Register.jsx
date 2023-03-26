@@ -23,7 +23,9 @@ const Register = () => {
                     <GroupInput type="text" label="Diplome" name="diplome" placeholder="Licence"/>
                     <GroupInput type="text" label="Metier" name="metier" placeholder="Informatique"/>
                 </div>
-                <Button type="submit" label="Enregistrer" classe="btn-primary"/>
+                <div className="div__btn">
+                    <Button type="submit" label="Enregistrer" classe="btn-primary"/>
+                </div>
             </form>
         </section>
     );
