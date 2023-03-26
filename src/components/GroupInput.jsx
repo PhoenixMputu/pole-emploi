@@ -1,9 +1,12 @@
+import {useState} from "react";
+
 const GroupInput = ({type, placeholder, name, label}) => {
+    const [error, setError] = useState('')
     return (
         <div className="groupInput">
             <label htmlFor={name}>{label}</label>
             <input type={type} placeholder={placeholder} name={name} reauired={true}/>
-            <p className="error">Erreur</p>
+            {error ? <p className="error">Erreur</p> : null}
         </div>
     );
 }
