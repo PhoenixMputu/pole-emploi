@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+#register {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#register .heroe, #register form {
+  width: 50%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#register .heroe {
+  background-color: blue;
+  height: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#register .heroe img {
+  width: 70%;
+  margin-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#register .heroe h1 {
+  text-align: center;
+  color: hsl(60, 77%, 57%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+}
+
+#register .heroe p {
+  color: hsl(60, 77%, 57%);
+  font-size: 18px;
+}
+
+#register form {
+  justify-content: flex-start;
+  padding: 2rem;
+  gap: 1rem 0;
+  position: relative;
+}
+
+#register form h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#register form p {
+  text-align: center;
+  font-size: 20px;
+}
+
+.container__groupInput {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem 2rem;
+}
+
+.groupInput {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: .5rem 0;
+}
+
+label {
+  font-size: 18px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.error {
+  font-size: 16px !important;
+  font-family: 'Times New Roman', Times, serif;
+  color: red;
+  text-align: start !important;
+}
+
+.groupInput label, .groupInput p, .groupInput input {
+  width: 100%;
+}
+
+.btn {
+  padding: .5rem 2rem;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  position: absolute;
+  margin-top: 3rem;
+  right: 50%;
+  transform: translate(50%, 0);
+
+}
+
+.btn-primary {
+  background-color: blue;
+  border: none;
+  color: hsl(60, 92%, 49%);
 }
