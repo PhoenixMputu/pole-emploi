@@ -1,8 +1,14 @@
 import illustrator from "../illustrator.svg";
 import GroupInput from "../components/GroupInput";
 import Button from "../components/Button";
+import Select from "../components/Select";
 
 const Register = () => {
+    const data = [
+        {id: 1, value: "Informatique"},
+        {id: 2, value: "Art"}
+    ];
+
     return (
         <section id='register'>
             <div className="heroe">
@@ -10,7 +16,7 @@ const Register = () => {
                 <h1>POLE EMPLOI</h1>
                 <p>Pour une meilleure insertion des jeunes congolais</p>
             </div>
-            <form>
+            <form encType="multipart">
                 <h2>Inscrivez-vous</h2>
                 <p>Veuillez remplir tous les champs avant de soumettre le formulaire</p>
                 <div className="container__groupInput">
@@ -19,9 +25,11 @@ const Register = () => {
                     <GroupInput type="email" label="Email" name="email" placeholder="johndoe@gmail.com"/>
                     <GroupInput type="tel" label="Téléphone" name="phone" placeholder="0811533644"/>
                     <GroupInput type="date" label="Age" name="age"/>
-                    <GroupInput type="text" label="Province" name="province" placeholder="Kinshasa"/>
-                    <GroupInput type="text" label="Diplome" name="diplome" placeholder="Licence"/>
-                    <GroupInput type="text" label="Metier" name="metier" placeholder="Informatique"/>
+                    <Select name="province" label="Province" data={data}/>
+                    <Select name="diplome" label="Niveau d'étude" data={data}/>
+                    <Select name="metier" label="Metier" data={data}/>
+                    <GroupInput type="file" label="CV" name="cv"/>
+                    <GroupInput type="file" label="Carte de membre" name="cardMembre"/>
                 </div>
                 <div className="div__btn">
                     <Button type="submit" label="Enregistrer" classe="btn-primary"/>

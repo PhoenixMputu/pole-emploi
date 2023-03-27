@@ -81,9 +81,14 @@ label {
   font-weight: 300;
 }
 
-input {
+input, select, option {
+  height: max-content;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+}
+
+select, option {
+  font-size: 12px;
 }
 
 .error {
@@ -93,8 +98,8 @@ input {
   text-align: start !important;
 }
 
-.groupInput label, .groupInput p, .groupInput input {
-  width: 100%;
+.groupInput label, .groupInput p, .groupInput input, .groupInput select, .groupInput option {
+  width: 100% !important;
 }
 
 button:hover {
@@ -123,6 +128,10 @@ button:hover {
   color: hsl(60, 92%, 49%);
 }
 
+input[type="file"] {
+  padding: 0 !important;
+}
+
 @media screen and (max-width: 600px) {
   #register {
     background-color: rgba(243, 237, 237, 0.726);
@@ -140,7 +149,7 @@ button:hover {
     display: block;
     height: max-content;
     background-color: #ffffff;
-    width: 80%;
+    width: 90%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -188,7 +197,7 @@ button:hover {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    gap: 1rem .5rem;
+    gap: 1rem 1.5rem;
   }
 
   .btn {
