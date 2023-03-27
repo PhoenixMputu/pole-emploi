@@ -28,8 +28,8 @@ const Register = () => {
                     <Select name="province" label="Province" data={data}/>
                     <Select name="diplome" label="Niveau d'étude" data={data}/>
                     <Select name="metier" label="Metier" data={data}/>
-                    <GroupInput type="file" label="CV" name="cv"/>
-                    <GroupInput type="file" label="Carte de membre" name="cardMembre"/>
+                    <GroupInput type="file" label="CV" name="cv" accept="pdf"/>
+                    <GroupInput type="file" label="Carte de membre" name="cardMembre" accept="pdf"/>
                 </div>
                 <div className="div__btn">
                     <Button type="submit" label="Enregistrer" classe="btn-primary"/>
