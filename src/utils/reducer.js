@@ -1,6 +1,6 @@
 export const initialState = {
     userName: null,
-    userFistName: null,
+    userFirstName: null,
     userEmail: null,
     userPhone: null,
     userAge: null,
@@ -19,10 +19,10 @@ const reducer = (state, action) => {
                 userName: action.userName
             }
         
-        case 'SET_USERFISTNAME':
+        case 'SET_USERFIRSTNAME':
             return {
                 ...state,
-                userFistName: action.userFistName
+                userFirstName: action.userFirstName
             }
 
         case 'SET_USEREMAIL':

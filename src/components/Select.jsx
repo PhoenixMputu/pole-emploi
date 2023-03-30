@@ -1,13 +1,36 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import { useStateValue } from '../utils/stateProvider';
 
 const Select = ({name, label, data}) => {
     const [select, setSelect] = useState();
-
-    console.log(select);
+    const [{userDiplome, userMetier, userProvince}, dispatch] = useStateValue();
 
     const handleChange = (e) => {
         setSelect(e.target.value);
     }
+
+    useEffect(() => {
+        if (name === "province") {
+            dispatch({
+                type: 'SET_USERPROVINCE',
+                userProvince: select
+            })
+        }
+
+        if (name === "diplome") {
+            dispatch({
+                type: 'SET_USERDIPLOME',
+                userDiplome: select
+            })
+        }
+
+        if (name === "metier") {
+            dispatch({
+                type: 'SET_USERMETIER',
+                userMetier: select
+            })
+        }
+    }, [userDiplome, userMetier, userProvince, select])
     
     return (
         <div className="groupInput">

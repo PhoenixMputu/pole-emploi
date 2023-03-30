@@ -1,13 +1,26 @@
+import {useState} from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import illustrator from "../illustrator.svg";
 import GroupInput from "../components/GroupInput";
 import Button from "../components/Button";
 import Select from "../components/Select";
+import { useStateValue } from '../utils/stateProvider'
 
 const Register = () => {
+    const [{userName, userFirstName, userEmail, userPhone, userAge, userCV, userCard, userDiplome, userMetier, userProvince}] = useStateValue();
+    const [error, setError] = useState();
+
     const data = [
         {id: 1, value: "Informatique"},
         {id: 2, value: "Art"}
     ];
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.table(userFirstName);
+        return toast(userFirstName);
+    }
 
     return (
         <section id='register'>
@@ -16,7 +29,8 @@ const Register = () => {
                 <h1>POLE EMPLOI</h1>
                 <p>Pour une meilleure insertion des jeunes congolais</p>
             </div>
-            <form encType="multipart">
+            <form encType="multipart" onSubmit={handleSubmit}>
+                <ToastContainer />
                 <h2>Inscrivez-vous</h2>
                 <p>Veuillez remplir tous les champs avant de soumettre le formulaire</p>
                 <div className="container__groupInput">
