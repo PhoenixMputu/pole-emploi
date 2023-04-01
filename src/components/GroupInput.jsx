@@ -3,6 +3,7 @@ import { useStateValue } from '../utils/stateProvider';
 
 const GroupInput = ({type, placeholder, name, label, accept}) => {
     const [data, setData] = useState('');
+    const [image, setImage] = useState();
     const [{userName, userFirstName, userEmail, userPhone, userAge, userCV, userCard}, dispatch] = useStateValue();
 
     const handleChange = (e) => {
@@ -53,6 +54,7 @@ const GroupInput = ({type, placeholder, name, label, accept}) => {
         }
 
         if (name === "cardMembre") {
+            setImage()
             dispatch({
                 type: 'SET_USERCARD',
                 userCard: data
