@@ -1,4 +1,4 @@
-import {useState} from "react";
+//import {useState} from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import illustrator from "../illustrator.svg";
@@ -8,7 +8,7 @@ import Select from "../components/Select";
 import { useStateValue } from '../utils/stateProvider'
 
 const Register = () => {
-    const [{userName, userFirstName, userEmail, userPhone, userAge, userCV, userCard, userDiplome, userMetier, userProvince}] = useStateValue();
+    const [{userName, userFirstName, userPhone}] = useStateValue();
 
     const data = [
         {id: 1, value: "Informatique"},
@@ -17,8 +17,18 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.table(userFirstName);
-        return toast(userFirstName);
+
+        if (userName.length < 3 || userFirstName.length < 3) {
+            toast.warn("Le nom et prénom doivent avoir au moins 3 caractères !", {
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+
+        if (userPhone.length < 10) {
+            toast.warn("Le numéro doit avoir 10 chiffres !", {
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
     }
 
     return (

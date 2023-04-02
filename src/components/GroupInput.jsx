@@ -10,6 +10,12 @@ const GroupInput = ({type, placeholder, name, label, accept}) => {
         setData(e.target.value);
     }
 
+    const handleImageChange = (imageSelected) => {
+        if (imageSelected) {
+          setImage(imageSelected[0])
+        }
+    }
+
     useEffect(() => {
         if (name === "name") {
             dispatch({
@@ -49,23 +55,22 @@ const GroupInput = ({type, placeholder, name, label, accept}) => {
         if (name === "cv") {
             dispatch({
                 type: 'SET_USERCV',
-                userCV: data
+                userCV: image
             })
         }
 
         if (name === "cardMembre") {
-            setImage()
             dispatch({
                 type: 'SET_USERCARD',
-                userCard: data
+                userCard: image
             })
         }
-    }, [userName, userFirstName, userEmail, userPhone, userAge, userCV, userCard, data]);
+    }, [userName, userFirstName, userEmail, userPhone, userAge, userCV, userCard, data, image]);
 
     return (
         <div className="groupInput">
             <label htmlFor={name}>{label}</label>
-            <input type={type} placeholder={placeholder} name={name} required={true} accept={accept} onChange={handleChange}/>
+            <input type={type} placeholder={placeholder} name={name} required={true} accept={accept} onChange={type === 'file' ? (e) => handleImageChange(e.target.files) : handleChange}/>
         </div>
     );
 }
