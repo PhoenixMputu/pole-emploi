@@ -36,8 +36,8 @@ const Select = ({name, label, data}) => {
         <div className="groupInput">
             <label htmlFor={name}>{label}</label>
             <select name={name} id={name} onChange={handleChange}>
-                <option value="Choisissez votre metier">Choisissez votre metier</option>
-                {data?.map(({value, id}) => <option value={value} key={id}>{value}</option>)}
+                <option value="0">Choisissez votre metier</option>
+                {data?.map(({value, id}) => <option value={id} key={id}>{value}</option>)}
             </select>
         </div>
     );

@@ -8,7 +8,7 @@ import Select from "../components/Select";
 import { useStateValue } from '../utils/stateProvider'
 
 const Register = () => {
-    const [{userName, userFirstName, userPhone}] = useStateValue();
+    const [{userName, userFirstName, userPhone, userDiplome, userMetier, userProvince}] = useStateValue();
 
     const data = [
         {id: 1, value: "Informatique"},
@@ -26,6 +26,12 @@ const Register = () => {
 
         if (userPhone.length < 10) {
             toast.warn("Le numéro doit avoir 10 chiffres !", {
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+
+        if (userDiplome === '0' || userProvince === '0' || userMetier === '0' || userDiplome === 'undefined' || userProvince === 'undefined' || userMetier === 'undefined') {
+            toast.warn("Choisissez une option !", {
                 position: toast.POSITION.TOP_RIGHT
             })
         }

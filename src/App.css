@@ -102,6 +102,11 @@ select, option {
   width: 100% !important;
 }
 
+.login p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
 button:hover {
   cursor: pointer;
   transform: scale(1.03);
@@ -132,6 +137,34 @@ input[type="file"] {
   padding: 0 !important;
 }
 
+.container_login {
+  position: relative;
+  height: 100vh;
+  background-color: rgb(250, 241, 241);
+  overflow: none;
+}
+
+.container_login form {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background-color: #ffffff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+}
+
+.container_login form h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+}
+
+.container_login form .groupInput, .container_login form button {
+  width: 100%;
+}
+
 @media screen and (max-width: 600px) {
   #register {
     background-color: rgba(243, 237, 237, 0.726);
@@ -157,6 +190,14 @@ input[type="file"] {
     transform: translate(-50%, -50%);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+  .container_login form {
+    width: 80%;
+  }
+
+  .container_login form .groupInput {
+    width: 100% !important;
   }
 
   #register .groupInput {

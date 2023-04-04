@@ -8,7 +8,9 @@ export const initialState = {
     userCV: null,
     userCard: null,
     userDiplome: null,
-    userMetier: null
+    userMetier: null,
+    adminEmail: null,
+    password: null
 }
 
 const reducer = (state, action) => {
@@ -72,7 +74,19 @@ const reducer = (state, action) => {
                 ...state,
                 userMetier: action.userMetier
             }
-    
+
+        case 'SET_ADMINEMAIL':
+            return {
+                ...state,
+                adminEmail: action.adminEmail
+            }
+
+        case 'SET_PASSWORD':
+            return {
+                ...state,
+            password: action.password
+            }
+
         default:
             return state;
     }
