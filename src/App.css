@@ -58,10 +58,6 @@
   margin-bottom: .5rem;
 }
 
-.card {
-  width: 25% !important;
-}
-
 .title {
   font-size: 32px !important;
   font-weight: 500 !important;
@@ -257,9 +253,5 @@ input[type="file"] {
 
   .btn {
     margin-top: 2rem;
-  }
-
-  .card {
-    width: 47% !important;
   }
 }

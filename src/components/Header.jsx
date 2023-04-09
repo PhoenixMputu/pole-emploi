@@ -15,7 +15,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand
           as={Link}
-          to='/admin'>
+          to='/dashboard'>
           <img
             src={illustrator}
             width='30'
@@ -29,34 +29,34 @@ const Header = () => {
           <Nav className='me-auto'>
           <Nav.Link
               as={Link}
-              href='#pricing'>
+              to='/dashboard'>
               Accueil
             </Nav.Link>
             <NavDropdown
               title='Administrateurs'
               id='collasible-nav-dropdown'>
-              <NavDropdown.Item as={Link} href='#action/3.1'>Liste des administrateurs</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/administrator'>Liste des administrateurs</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} href='#action/3.2'>Ajouter un administrateur</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/addAdmin'>Ajouter un administrateur</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link
               as={Link}
-              to='/admin'>
+              to='/candidat'>
               Candidats
             </Nav.Link>
             <NavDropdown
               title="Offres d'emploi"
               id='collasible-nav-dropdown'>
-              <NavDropdown.Item as={Link} href='#action/3.1'>Liste des administrateurs</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/offer'>Liste d'offres</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} href='#action/3.2'>Ajouter un administrateur</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/addOffer'>Ajouter un offre</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown
               title="Domaines"
               id='collasible-nav-dropdown'>
-              <NavDropdown.Item as={Link} href='#action/3.1'>Liste des domaines</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/domaine'>Liste des domaines</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} href='#action/3.2'>Ajouter un domaine</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='#action/3.2'>Ajouter un domaine</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
