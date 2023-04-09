@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Administrator from "./pages/Administrator";
 import Candidat from "./pages/Candidat";
+import Offer from "./pages/Offer";
+import Domaine from "./pages/Domaine";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
 			<Route path="/dashboard" element={<Dashboard/>} />
 			<Route path="/administrator" element={<Administrator/>} />
 			<Route path="/candidat" element={<Candidat/>} />
+			<Route path="/offer" element={<Offer/>} />
+			<Route path="/domaine" element={<Domaine/>} />
 		</Routes>
 	</BrowserRouter>
   );

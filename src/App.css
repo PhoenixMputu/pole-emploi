@@ -175,6 +175,22 @@ input[type="file"] {
   width: 100%;
 }
 
+.flexbox {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  gap: 10px 2rem !important;
+}
+
+.action {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: space-around !important;
+  height: 100%;
+}
+
 @media screen and (max-width: 600px) {
   #register {
     background-color: rgba(243, 237, 237, 0.726);
@@ -253,5 +269,9 @@ input[type="file"] {
 
   .btn {
     margin-top: 2rem;
+  }
+
+  .flexbox {
+    overflow-x: scroll;
   }
 }

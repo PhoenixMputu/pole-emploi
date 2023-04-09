@@ -2,10 +2,11 @@ import Header from "../components/Header";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import { AiFillDelete } from "react-icons/ai";
+import { MdModeEditOutline } from "react-icons/md";
 import Dropdown from "react-bootstrap/Dropdown";
 import SplitButton from "react-bootstrap/SplitButton";
 
-const Candidat = () => {
+const Offer = () => {
   return (
     <>
       <Header />
@@ -14,7 +15,7 @@ const Candidat = () => {
           <input
             type='text'
             className='form-control'
-            placeholder='Rechercher par nom'
+            placeholder='Rechercher par poste'
             aria-label="Recipient's username"
             aria-describedby='basic-addon2'
           />
@@ -29,8 +30,23 @@ const Candidat = () => {
             key='primary'
             id={`dropdown-split-variants-primary`}
             variant='primary'
-            title='Age'
+            title='Entreprise'
             classname="button">
+            <Dropdown.Item eventKey='1'>Action</Dropdown.Item>
+            <Dropdown.Item eventKey='2'>Another action</Dropdown.Item>
+            <Dropdown.Item
+              eventKey='3'
+              active>
+              Active Item
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item eventKey='3'>Separated link</Dropdown.Item>
+          </SplitButton>
+          <SplitButton
+            key='primary'
+            id={`dropdown-split-variants-primary`}
+            variant='primary'
+            title='Date limite'>
             <Dropdown.Item eventKey='1'>Action</Dropdown.Item>
             <Dropdown.Item eventKey='2'>Another action</Dropdown.Item>
             <Dropdown.Item
@@ -120,8 +136,9 @@ const Candidat = () => {
               <td>F</td>
               <td>jhon@gmail.com</td>
               <td>+233811533633</td>
-              <td>
+              <td className="action">
                 <AiFillDelete color='red' />
+                <MdModeEditOutline color="green" />
               </td>
             </tr>
           </tbody>
@@ -131,4 +148,4 @@ const Candidat = () => {
   );
 };
 
-export default Candidat;
+export default Offer;

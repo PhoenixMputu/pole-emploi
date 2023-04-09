@@ -12,7 +12,7 @@ const Administrator = () => {
                     <input type="text" className="form-control" placeholder="Rechercher par nom" aria-label="Recipient's username" aria-describedby="basic-addon2" />
                     <button className="input-group-text bg-primary" id="basic-addon2">Rechercher</button>
                 </div>
-                <Table responsive>
+                <Table responsive bordered>
                     <thead>
                         <tr>
                             <th>Nom</th>
