@@ -58,6 +58,15 @@
   margin-bottom: .5rem;
 }
 
+.card {
+  width: 25% !important;
+}
+
+.title {
+  font-size: 32px !important;
+  font-weight: 500 !important;
+}
+
 #register form p {
   text-align: center;
   font-size: 20px;
@@ -248,5 +257,9 @@ input[type="file"] {
 
   .btn {
     margin-top: 2rem;
+  }
+
+  .card {
+    width: 47% !important;
   }
 }
