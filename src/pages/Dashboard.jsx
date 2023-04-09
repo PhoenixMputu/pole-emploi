@@ -10,28 +10,28 @@ const Dashboard = () => {
             <Header/>
             <Container className="pt-5">
                 <Row className="gy-4">
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
-                    <Col md={3} sm={6}>
+                    <Col md={3} xs={6}>
                         <CardWrapper label="Hello World !" number={20} description="Localhost Hello World !"/>
                     </Col>
                 </Row>
