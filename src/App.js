@@ -8,6 +8,7 @@ import Administrator from "./pages/Administrator";
 import Candidat from "./pages/Candidat";
 import Offer from "./pages/Offer";
 import Domaine from "./pages/Domaine";
+import AddAdmin from "./pages/AddAdmin";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 			<Route path="/candidat" element={<Candidat/>} />
 			<Route path="/offer" element={<Offer/>} />
 			<Route path="/domaine" element={<Domaine/>} />
+			<Route path="/addAdmin" element={<AddAdmin/>} />
 		</Routes>
 	</BrowserRouter>
   );
