@@ -4,21 +4,19 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 //import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
-
-const { Formik } = formik;
-
-const schema = yup.object().shape({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
-  username: yup.string().required(),
-  city: yup.string().required(),
-  state: yup.string().required(),
-  zip: yup.string().required(),
-  terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
-});
+import * as formik from 'formik';
+import * as yup from 'yup'
 
 const AddAdmin = () => {
   const [validated, setValidated] = useState(false);
+  const { Formik } = formik;
+
+  const schema = yup.object().shape({
+    name: yup.string().required(),
+    firstName: yup.string().required(),
+    email: yup.string().required(),
+    password: yup.string().required()
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,18 +38,14 @@ const AddAdmin = () => {
           validationSchema={schema}
           onSubmit={handleSubmit}
           initialValues={{
-            firstName: "Mark",
-            lastName: "Otto",
-            username: "",
-            city: "",
-            state: "",
-            zip: "",
-            terms: false,
+            name: "Mark",
+            firstName: "Otto",
+            email: "",
+            password: "",
           }}>
           {({
             handleSubmit,
             handleChange,
-            handleBlur,
             values,
             touched,
             isValid,
@@ -59,7 +53,6 @@ const AddAdmin = () => {
           }) => (
             <Form
               noValidate
-              validated={validated}
               onSubmit={handleSubmit}>
               <Form.Group
                 className='mb-3'
@@ -67,10 +60,14 @@ const AddAdmin = () => {
                 <Form.Label>Nom</Form.Label>
                 <Form.Control
                   type='text'
+                  name="name"
                   placeholder='John'
+                  value={values.name}
+                  onChange={handleChange}
+                  isValid={touched.name && !errors.name}
                   required
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Looks good!</Form.Control.Feedback>
               </Form.Group>
               <Form.Group
                 className='mb-3'
@@ -78,22 +75,25 @@ const AddAdmin = () => {
                 <Form.Label>Prénom</Form.Label>
                 <Form.Control
                   type='text'
+                  name="firstName"
                   placeholder='John'
+                  value={values.firstName}
+                  onChange={handleChange}
+                  isValid={touched.firstName && !errors.firstName}
                   required
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Looks good!</Form.Control.Feedback>
               </Form.Group>
               <Form.Group
                 className='mb-3'
                 controlId='exampleForm.ControlInput3'>
                 <Form.Label>Sexe</Form.Label>
-                <Form.Select aria-label='Default select example'>
+                <Form.Select aria-label='Default select example' onChange={handleChange}>
                   <option>Open this select menu</option>
                   <option value='1'>One</option>
                   <option value='2'>Two</option>
                   <option value='3'>Three</option>
                 </Form.Select>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
               <Form.Group
                 className='mb-3'
@@ -101,10 +101,14 @@ const AddAdmin = () => {
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   type='email'
+                  name="email"
                   placeholder='John@gmail.com'
+                  onChange={handleChange}
+                  value={values.email}
+                  isInvalid={!!errors.email}
                   required
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group
                 className='mb-3'
@@ -113,9 +117,13 @@ const AddAdmin = () => {
                 <Form.Control
                   type='password'
                   placeholder='********'
+                  name="password"
+                  onChange={handleChange}
+                  value={values.password}
+                  isInvalid={errors.password}
                   required
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
               </Form.Group>
               <div className='d-grid gap-2'>
                 <Button
